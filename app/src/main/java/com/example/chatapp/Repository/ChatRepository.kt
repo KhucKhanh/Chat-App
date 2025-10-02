@@ -1,6 +1,5 @@
 package com.example.chatapp.Repository
 
-import android.util.Log.e
 import com.example.chatapp.Data.ChatRoom
 import com.example.chatapp.Data.Message
 import com.google.firebase.firestore.FirebaseFirestore
@@ -52,6 +51,7 @@ object ChatRepository {
             messageId = messageId,
             senderId = senderId,
             text = text,
+            timestamp = com.google.firebase.Timestamp.now()
         )
 
         val roomRef = db.collection("chatRooms").document(roomId)
